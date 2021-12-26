@@ -3,6 +3,11 @@ import event_coord_pb2
 import event_coord_pb2_grpc
 from concurrent import futures
 import logging
+
+kafka_url = os.environ['KAFKA_URL']
+kafka_topic = os.environ['KAFKA_TOPIC']
+
+
 class EventCoordinateServicer(event_coord_pb2_grpc.ItemServiceServicer):
     def Create(self,request,context):
         request_value = {
@@ -11,7 +16,8 @@ class EventCoordinateServicer(event_coord_pb2_grpc.ItemServiceServicer):
             "longitude": int(request.longitude)
 
         }
-        print(request_value)
+        encoded_data = json.dumps(request_value).encode('utf-8')
+        producer.send(kafka_topic,encoded_data)
         return event_coord_pb2.EventCoordinatesMessage(**request_value)
 
 
