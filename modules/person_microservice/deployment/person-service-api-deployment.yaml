@@ -60,4 +60,3 @@ spec:
             configMapKeyRef:
               name: db-person-map
               key: DB_PORT
-      restartPolicy: Always
