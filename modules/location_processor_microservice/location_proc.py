@@ -3,6 +3,7 @@ import event_coord_pb2
 import event_coord_pb2_grpc
 from concurrent import futures
 import logging
+import os
 
 kafka_url = os.environ['KAFKA_URL']
 kafka_topic = os.environ['KAFKA_TOPIC']

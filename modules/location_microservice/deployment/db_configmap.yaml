@@ -8,4 +8,4 @@ data:
   KAFKA_URL: my-release-kafka.default.svc.cluster.local:9092
   KAFKA_TOPIC: test
 metadata:
-  name: config-location-processor-map
+  name: config-location-kafka-map

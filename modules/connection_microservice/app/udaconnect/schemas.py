@@ -1,5 +1,6 @@
-from app.udaconnect.models import  Location, Person
 from marshmallow import Schema, fields
+
+from app.udaconnect.models import Location, Person
 
 
 class LocationSchema(Schema):

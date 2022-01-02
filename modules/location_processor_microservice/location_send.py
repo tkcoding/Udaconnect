@@ -9,8 +9,8 @@ Sample of user sending coordinates to gRPC
 
 print("Coordinates sending...")
 
-# channel = grpc.insecure_channel("127.0.0.1:30003")
-channel = grpc.insecure_channel("localhost:5005")
+channel = grpc.insecure_channel("127.0.0.1:30003")
+# channel = grpc.insecure_channel("localhost:5005")
 stub = event_coord_pb2_grpc.ItemServiceStub(channel)
 
 # Update this with desired payload

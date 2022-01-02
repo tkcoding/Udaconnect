@@ -84,8 +84,3 @@ spec:
         - name: geoconnections-db
           persistentVolumeClaim:
             claimName: postgres-geoconnections-pv-claim
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
