@@ -1,0 +1,128 @@
+openapi: 3.0.0
+servers:
+  # Added by API Auto Mocking Plugin
+#  - description: SwaggerHub API Auto Mocking
+#    url: https://virtserver.swaggerhub.com/tkcoding/Udaconnect/1.0.0
+  - description: http://localhost:30001
+    url: Person API - Udacity
+info:
+  description: Person Endpoints
+  version: 1.1.0
+  title: Person Endpoints
+  contact:
+    email: ludicroustk@gmail.com
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+tags:
+  - name: admins
+    description: Secured Admin-only calls
+  - name: developers
+    description: Operations available to regular developers
+paths:
+  /api/persons:
+    get:
+      tags:
+        - obtain person details
+      summary: obtain all person details
+      operationId: getAllPersons
+      description: |
+        Obtain person details for all users in the PersonAPI
+      responses:
+        '200':
+          description: search results matching criteria
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Person'
+        '400':
+          description: bad input parameter
+    post:
+      tags:
+        - creates a new person entry
+      summary: adds new person records
+      operationId: createPerson
+      description: Passing the correct parameters, you can create a new record 
+      responses:
+        '201':
+          description: created new person
+          content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Person'
+        '400':
+          description: bad input parameter
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PersonNoId'
+        description: create new person 
+  /api/persons/{personId}:
+    get:
+      tags:
+        - obtain person details by Id
+      summary: obtain person details by Id
+      operationId: getPersonById
+      description: |
+        Obtain person details for all users in the PersonAPI
+      parameters:
+      - name : personId
+        in : path
+        schema:
+          type: integer
+        required: true
+      responses:
+        '200':
+          description: search results matching criteria
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Person'
+        '400':
+          description: bad input parameter
+components:
+  schemas:
+    Person:
+      type: object
+      required:
+      - company_name
+      - first_name
+      - id
+      - last_name
+      properties:
+        company_name:
+          type: string
+          example: 'Alpha Omega Upholster'
+        first_name:
+          type: string
+          example: 'Taco'
+        id:
+          type: integer
+          example: 5
+        last_name:
+          type: string
+          example : 'Fargo'
+    PersonNoId:
+      type: object
+      required:
+      - company_name
+      - first_name
+      - last_name
+      properties:
+        company_name:
+          type: string
+          example: 'Alpha Omega Upholster'
+        first_name:
+          type: string
+          example: 'Taco'
+        last_name:
+          type: string
+          example: 'Fargo'
