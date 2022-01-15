@@ -1,0 +1,10 @@
+gRPC documentation for location microservice.
+
+using the template in location_processor_microservice/location_send.py sample with below payload 
+'''
+user_coordinates_3 = coordinates_event_pb2.EventCoordinatesMessage(
+    userId=3,
+    latitude=-100,
+    longitude=30
+)
+'''
