@@ -8,7 +8,7 @@ import os
 kafka_url = os.environ['KAFKA_URL']
 kafka_topic = os.environ['KAFKA_TOPIC']
 
-
+producer = KafkaProducer(bootstrap_servers=kafka_url)
 class EventCoordinateServicer(event_coord_pb2_grpc.ItemServiceServicer):
     def Create(self,request,context):
         request_value = {

@@ -28,7 +28,6 @@ def save_in_db(location):
     insert = "INSERT INTO location (person_id, coordinate) VALUES ({}, ST_Point({}, {}))" \
         .format(person_id, latitude, longitude)
 
-    print(insert)
     conn.execute(insert)
 
 
