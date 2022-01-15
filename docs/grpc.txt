@@ -2,9 +2,13 @@ gRPC documentation for location microservice.
 
 using the template in location_processor_microservice/location_send.py sample with below payload 
 '''
-user_coordinates_3 = coordinates_event_pb2.EventCoordinatesMessage(
-    userId=3,
-    latitude=-100,
-    longitude=30
-)
+message EventCoordinatesMessage {
+  int32 userId = 1;
+  int32 latitude = 2;
+  int32 longitude = 3;
+}
+
+service ItemService {
+  rpc Create(EventCoordinatesMessage) returns (EventCoordinatesMessage);
+}
 '''
