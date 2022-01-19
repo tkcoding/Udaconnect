@@ -30,7 +30,7 @@ spec:
         service: location-kafka-api
     spec:
       containers:
-      - image: tkonthemove/location-kafka-service-api:latest
+      - image: tkonthemove/location-kafka-service-api:v7
         name: location-kafka-container
         imagePullPolicy: Always
         env:

@@ -37,3 +37,4 @@ class ConnectionDataResource(Resource):
             meters=distance,
         )
         return results
+
