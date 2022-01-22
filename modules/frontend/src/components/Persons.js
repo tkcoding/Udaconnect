@@ -47,7 +47,7 @@ class Persons extends Component {
                   {person.first_name} {person.last_name}
                 </div>
                 <div>
-                  Company: <strong>{person.company_name}</strong>{" "}
+                  Company Info: <strong>{person.company_name}</strong>{" "}
                 </div>
               </li>
             ))}

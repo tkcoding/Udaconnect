@@ -27,15 +27,15 @@ stub = event_coord_pb2_grpc.ItemServiceStub(channel)
 # )
 
 user_coordinates_3 = event_coord_pb2.EventCoordinatesMessage(
-    userId=5,
+    userId=2,
     latitude=-100,
     longitude=30
 )
 
 
 user_coordinates_4 = event_coord_pb2.EventCoordinatesMessage(
-    userId=6,
-    latitude=-99,
+    userId=3,
+    latitude=-100,
     longitude=30
 )
 
