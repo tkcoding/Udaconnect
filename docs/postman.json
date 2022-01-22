@@ -73,7 +73,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:30002/api/persons/1/connection?start_date=2022-01-01&end_date=2022-12-30&distance=200",
+					"raw": "http://localhost:30002/api/persons/2/connection?start_date=2022-01-01&end_date=2022-12-30&distance=5",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -82,7 +82,7 @@
 					"path": [
 						"api",
 						"persons",
-						"1",
+						"2",
 						"connection"
 					],
 					"query": [
@@ -96,7 +96,7 @@
 						},
 						{
 							"key": "distance",
-							"value": "200"
+							"value": "5"
 						}
 					]
 				}

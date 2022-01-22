@@ -107,13 +107,13 @@ Afterwards, you can test that `kubectl` works by running a command like `kubectl
 
 To verify it works.
 * `http://localhost:30000/` , if newly added person and newly added connection is linked with certain persons. 
-Webpage will appear to be similar as below:
+Webpage will appear to be similar as below , on the left side is the people to view and left is the connections linked to distance defined.
 
 ![frontend](img/frontend.png)
 
 
 Other page to verify microservice is working as intended.
 * `http://localhost:30001/` - OpenAPI for persons
-* 'http://localhost:30002/' - OpenAPI for geolocation
+* `http://localhost:30002/` - OpenAPI for geolocation
 * `http://localhost:30001/api/` - Base path for API
 
